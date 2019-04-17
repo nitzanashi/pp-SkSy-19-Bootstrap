@@ -1,0 +1,77 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+body {
+  background-image: linear-gradient($purple, $indigo);
+  /*background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);*/
+  /*background: -o-linear-gradient(45deg, #4158d0, #c850c0);*/
+  background: -moz-linear-gradient(45deg, $purple, $indigo);
+  /*background: linear-gradient(45deg, #4158d0, #c850c0);*/
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.App {
+  padding-top: 4rem;
+  min-height: 100vh;
+  //margin: 2em auto;
+  display: block;
+}
+
+
+.bg-indigo {
+  background-color: $indigo;
+}
+
+.todo-list{
+
+  background-color: $white;
+  margin: auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #efefef;
+  padding: 30px;
+
+  box-shadow:
+          0 1px 1px rgba(0,0,0,0.15),
+          0 10px 0 -5px #eee,
+          0 10px 1px -4px rgba(0,0,0,0.15),
+          0 20px 0px -10px #eee,
+          0 20px 1px -9px rgba(0,0,0,0.15)
+
+}
+
+.todo-item{
+  display: flex;
+  justify-content: flex-start;
+  padding:  0.5em;
+  width: 70%;
+  border-bottom: 1px solid #cecece;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  color: #333333;
+
+}
+
+.todo-item > * {
+  margin: 0.1em;
+}
+
+
+h1{
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  text-shadow:
+          2px 2px $purple,
+          4px 4px $indigo;
+
+}
+
+p {
+  padding-left: 1em;
+}
