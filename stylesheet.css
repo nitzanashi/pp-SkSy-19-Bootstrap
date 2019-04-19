@@ -9667,6 +9667,7 @@ body {
 .App {
   padding-top: 4rem;
   min-height: 100vh;
+  margin: 2em auto;
   display: block;
 }
 
@@ -9677,10 +9678,8 @@ body {
 .todo-list {
   background-color: #fff;
   margin: auto;
-  width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   border: 1px solid #efefef;
   padding: 30px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0px -10px #eee, 0 20px 1px -9px rgba(0, 0, 0, 0.15);
@@ -9698,21 +9697,22 @@ body {
   color: #333333;
 }
 
-.todo-item > * {
-  margin: 0.1em;
-}
-
-h1 {
+.fancy-logo {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   color: white;
   text-transform: uppercase;
   text-shadow: 2px 2px #6f42c1, 4px 4px #6610f2;
+  margin-bottom: 1rem;
 }
 
-p {
-  padding-left: 1em;
+.todo-btn {
+  margin-left: auto;
+}
+
+.progress-bar-indigo {
+  background-color: #6610f2 !important;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
