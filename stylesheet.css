@@ -9715,4 +9715,10 @@ body {
   background-color: #6610f2 !important;
 }
 
+.completed {
+  font-style: italic;
+  color: #cdcdcd;
+  text-decoration: line-through;
+}
+
 /*# sourceMappingURL=stylesheet.css.map */
