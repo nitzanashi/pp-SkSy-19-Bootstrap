@@ -77,3 +77,9 @@ margin-bottom: 1rem;
   background-color: $indigo !important;
 }
 
+.completed {
+  font-style: italic;
+  color: #cdcdcd;
+  text-decoration: line-through;
+}
+
