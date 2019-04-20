@@ -15,6 +15,9 @@
     <!-- ugly Favicon -->
     <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAADvnQQA8p8AAOmgBADvmwEA9Pz/AOedAwDrvlsA76ECAP/88gDrngEA+eK0AOubAADy1ZEA/eXCAPrTiAD54rMA////AO2dAgDilAYA76IFAO2gAgDomg4A6Z0BAPS9TgDrnQEA+8llAPnhtADsnAMA55oAAPK/VwD47+8A+v30AO+cAwD21pQA981+APGdAQD89swA99+jAPXbpADsnQAA+eCuAN6eEQDpnwIA//v+AO2gAADsnwIA7Z8CAPedAAD94KAA/v7+APT6+ADzzpUA7JwBAPSgAAD1+PwA8KICAOacAADtnwEA6JsCAPjhsQDnoAUA9LxGAN+ZDADywmIA9MdsAPPLeADtulAA++K8APritQD2nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAkJCQkJCQkJCQkJCQkJCSwJCQkJCQkJCQkJCQkJCQksCQkJCRIoOwoKLwkJCQkJLAkJOSYlCwAjFkQNCQkJCSwJCQwwCQkJCQkDCkMJCQksCRMhCQkJFAkJCSAaNQkJLAkzGwkJKRAxCQkJGA8JCSwJDjcJHxAQEAQJCQEKCQksCSIHCBAQJzYQKwkJCQkJLAlBBQkyLQkJEBAkCQkJCSwJHEAJCQkJCQIQEDwJCQksCQk/GQkJCQkJPhAQRQkJLAkJCQYdOio0CQkVHgkJCSwJCQkJOEIXPQkJCQkJCQksCQkJCQkJCQkJCQkJCQkJLhEREREREREREREREREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
 
+
+
+    <script src="todolist.js" type="module"></script>
     <title>TODO APP</title>
 </head>
 <body class="bg-light">
@@ -51,85 +54,110 @@
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>
-                                Give the first HA for Skalierbare Systeme
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-indigo" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                25.04.2019 23:55
-                            </td>
-                            <td>
-                                <div class="justify-content-center">
-                                    <input id="checkbox" class="" type="checkbox" onclick="" onchange="" aria-valuetext="hello" value="Finished"/>
-                                    <label for="checkbox">
-                                        Finished
-                                    </label>
-                                </div>
-                                <button class="btn btn-primary" type="submit" >Edit</button>
-                                <button class="btn btn-danger " type="submit">Delete</button>
-                            </td>
-                        </tr>
+                        <!--<tr>-->
+                            <!--<th scope="row">1</th>-->
+                            <!--<td>-->
+                                <!--Give the first HA for Skalierbare Systeme-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div class="progress">-->
+                                    <!--<div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-indigo" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--25.04.2019 23:55-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div class="justify-content-center ">-->
+                                    <!--<input id="checkbox" class="" type="checkbox" onclick="" onchange="" aria-valuetext="" value="Finished"/>-->
+                                    <!--<label for="checkbox">-->
+                                        <!--Finished-->
+                                    <!--</label>-->
+                                <!--</div>-->
+                                <!--<button class="btn btn-primary" type="submit" >Edit</button>-->
+                                <!--<button class="btn btn-danger " type="submit">Delete</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
 
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>
-                                Give the first HA for Skalierbare Systeme
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-indigo" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                25.04.2019 23:55
-                            </td>
-                            <td>
-                                <div class="justify-content-center">
-                                    <input id="checkbox" class="" type="checkbox" onclick="" onchange="" aria-valuetext="hello"/>
-                                    <label for="checkbox">
-                                        Finished
-                                    </label>
-                                </div>
-                                <button class="btn btn-primary" type="submit" >Edit</button>
-                                <button class="btn btn-danger " type="submit">Delete</button>
-                            </td>
-                        </tr>
+                        <!--<tr>-->
+                            <!--<th scope="row">2</th>-->
+                            <!--<td>-->
+                                <!--Give the first HA for Skalierbare Systeme-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div class="progress">-->
+                                    <!--<div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-indigo" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--25.04.2019 23:55-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div class="justify-content-center">-->
+                                    <!--<input id="checkbox"  type="checkbox" onclick="finished()" onchange="" aria-valuetext=""/>-->
+                                    <!--<label for="checkbox">-->
+                                        <!--Finished-->
+                                    <!--</label>-->
+                                <!--</div>-->
+                                <!--<button class="btn btn-primary" type="submit" >Edit</button>-->
+                                <!--<button class="btn btn-danger " type="submit">Delete</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
 
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>
-                                Give the first HA for Skalierbare Systeme
-                            </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-indigo" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
-                                </div>
-                            </td>
-                            <td>
-                                25.04.2019 23:55
-                            </td>
-                            <td>
-                                <div class="justify-content-center">
-                                    <input id="checkbox" class="" type="checkbox" onclick="" onchange="" aria-valuetext="hello"/>
-                                    <label for="checkbox">
-                                        Finished
-                                    </label>
-                                </div>
-                                <button class="btn btn-primary" type="submit" >Edit</button>
-                                <button class="btn btn-danger " type="submit">Delete</button>
-                            </td>
-                        </tr>
+                        <!--<tr>-->
+                            <!--<th scope="row">3</th>-->
+                            <!--<td>-->
+                                <!--Give the first HA for Skalierbare Systeme-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div class="progress">-->
+                                    <!--<div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-indigo" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--25.04.2019 23:55-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div class="justify-content-center">-->
+                                    <!--<input id="checkbox" class="" type="checkbox" onclick="" onchange="" aria-valuetext=""/>-->
+                                    <!--<label for="checkbox">-->
+                                        <!--Finished-->
+                                    <!--</label>-->
+                                <!--</div>-->
+                                <!--<button class="btn btn-primary" type="submit" >Edit</button>-->
+                                <!--<button class="btn btn-danger " type="submit">Delete</button>-->
+                            <!--</td>-->
+                        <!--</tr>-->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+
+    <template id="todo-item">
+        <tr>
+            <th id="id" scope="row"></th>
+            <td id="task">
+            </td>
+            <td>
+                <div class="progress">
+                    <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-indigo" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+                </div>
+            </td>
+            <td id="deadline">
+            </td>
+            <td>
+                <div class="justify-content-center">
+                    <input id="checkbox" class="" type="checkbox"  onchange="" aria-valuetext=""/>
+                    <label for="checkbox">
+                        Finished
+                    </label>
+                </div>
+                <button class="btn btn-primary" type="submit" >Edit</button>
+                <button class="btn btn-danger " type="submit">Delete</button>
+            </td>
+        </tr>
+    </template>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -137,4 +165,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
+
+
+
 </html>
