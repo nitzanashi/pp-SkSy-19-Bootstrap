@@ -2,6 +2,6 @@
 
 Programmierpraktikum: Skalierbare Syteme
 
-Author: Nitzan Nashi & _______
+Author: Nitzan Nashi & Dimitris Prevezianos
 
 Demo for a TODO list APP

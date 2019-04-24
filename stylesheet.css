@@ -9676,8 +9676,8 @@ body {
 }
 
 .todo-list {
+  margin: 0 auto;
   background-color: #fff;
-  margin: auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #efefef;
@@ -9719,6 +9719,16 @@ body {
   font-style: italic;
   color: #cdcdcd;
   text-decoration: line-through;
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 100%;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
