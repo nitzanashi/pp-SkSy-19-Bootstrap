@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "task": "some task",
+    "description": "here we can describe the details about what we're gonna do in this TODO item",
+    "deadline": "2019-01-25T23:55",
+    "percentage": "70",
+    "finished": false
+  },
+  {
+    "id": "2",
+    "task": "Give the first HA for Skalierbare Systeme",
+    "description": "some text to describe the task",
+    "deadline": "2019-04-25T23:55",
+    "percentage": "10",
+    "finished": false
+  },
+  {
+    "id": "3",
+    "task": "some other task",
+    "description": "some text to describe the task",
+    "deadline": "2019-07-25T23:55",
+    "percentage": "100",
+    "finished": true
+  },
+  {
+    "id": "4",
+    "task": "yet another task",
+    "description": "some text to describe the task",
+    "deadline": "2019-04-28T23:55",
+    "percentage": "40",
+    "finished": false
+  }
+]
