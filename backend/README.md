@@ -12,3 +12,10 @@ npm install -g nodemon
 ```
 npx nodemon server
 ```
+
+## CRUD API ##
+| HTTP METHOD | POST             | GET       | PUT         | DELETE |
+| ----------- | ---------------- | --------- | ----------- | ------ |
+| CRUD OP     | CREATE           | READ      | UPDATE      | DELETE |
+| /todos      | Create new todo  | List todo | Error       | Error  |
+| /todos/86   | Error            | Show Bo   | If exists, update Bo; If not, error | Delete Bo |
