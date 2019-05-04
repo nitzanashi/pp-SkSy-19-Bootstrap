@@ -57,8 +57,8 @@ router.get('/:id',function(req, res) {
     });
 });
 
-// POST  update an Item - UPDATE
-router.post('/:id', function(req, res) {
+// PUT  update an Item - UPDATE
+router.put('/:id', function(req, res) {
     Todo.findById(req.params.id, function(err, todo) {
         if (!todo)
             res.status(404).send("data is not found");
