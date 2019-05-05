@@ -8,7 +8,12 @@ npm install -g nodemon
 
 
 ## Start the APP
+start mongod
+```
+mongod
+```
 
+start the server
 ```
 npx nodemon server
 ```
