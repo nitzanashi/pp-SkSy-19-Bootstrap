@@ -1,0 +1,6 @@
+language: node_js
+os: linux
+node_js: node
+notifications:
+  email:
+    - nitzan14@gmail.com
