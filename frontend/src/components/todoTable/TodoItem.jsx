@@ -32,7 +32,7 @@ class TodoItem extends Component {
                             <label for="checkbox" className="check-space"> Finished
                             </label>
                         </div>
-                        <button className="btn btn-primary btn-space" type="submit" >Edit</button>
+                        <button className="btn btn-primary btn-space" type="submit" id={this.props.id} task={this.props.task} percentage={this.props.percentage} deadline ={this.props.deadline} >Edit</button>
                         <button className="btn btn-danger btn-space" type="submit">Delete</button>
                     </td>
                 </tr>
