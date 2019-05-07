@@ -5,8 +5,8 @@ import axios from 'axios'
 
 class TodoList extends Component {
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             todos: Data,
             data: [],
@@ -21,11 +21,11 @@ class TodoList extends Component {
     // when component mounts, first thing it does is fetch all existing data in our db
     // then we incorporate a polling logic so that we can easily see if our db has
     // changed and implement those changes into our UI
+    // Pooling for the Information
     componentDidMount() {
-        this.getDataFromDb();
-        if(!this.state.intervalIsSet){
-            let interval = setInterval(this.getDataFromDb, 1000);
-            this.setState({intervalIsSet: interval});
+        if (!this.state.intervalIsSet) {
+            let interval = setInterval(this.getDataFromDb, 5000);
+            this.setState({ intervalIsSet: interval });
         }
     }
 
@@ -40,11 +40,11 @@ class TodoList extends Component {
     // GET ALL THE DATA
     getDataFromDb = () => {
         axios.get("http://localhost:3001/todos")
-            .then(res => this.setState({data: res}));
-
-        // fetch("http://localhost:3001/todos")
-        //     .then(data => data.json())
-        //     .then(res => this.setState({data: res.data}));
+            .then(res => {
+                this.setState({data: res.data});
+                console.log(res.data);
+            }
+            );
     };
 
     // DELETE ITEM
@@ -76,7 +76,9 @@ class TodoList extends Component {
 
     render() {
 
-        const TodoItems = this.state.todos.map(
+        const { data } = this.state;
+        console.log(data);
+        const TodoItems = data.map(
             item =>(
                 <TodoItem id={item.id} task={item.task} percentage={item.percentage} deadline={item.deadline} finished={item.finished} description={item.description} handleChange={this.handleChange}/>
             )

@@ -8,12 +8,12 @@ import About from "../about";
 class Dashboard extends Component {
     render() {
         return (
-                <switch>
+                <Switch>
                     <Route exact path="/" component={TodoList} />
                     <Route exact path="/addItem" component={AddItem}/>
                     <Route exact path="/editItem" component={EditItem}/>
                     <Route exact path="/about" component={About}/>
-                </switch>
+                </Switch>
         );
     }
 }
