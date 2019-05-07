@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const Todo = require("../model/todo");
+import { isEmpty } from '../rules/isEmpty';
 
 
 // GET list of all TASKS - Read
 router.get('/', function(req, res, ){
     Todo.find(function (err, todos) {
         if(err) {
-            console.log(err);
+            res.status(404).send("data is not found");
         }
         else{
             res.json(todos);
@@ -17,15 +18,19 @@ router.get('/', function(req, res, ){
 
 // GET a specific Task by id - Read
 router.get('/:id',function(req, res) {
-    let id = req.params.id;
-    Todo.findById(id, function(err, todo) {
-        res.json(todo);
+    Todo.find({id: req.params.id}, function(err, todo) {
+        if(err || isEmpty(todo)) {
+            res.status(404).send("data is not found");
+        }
+        else{
+            res.json(todo);
+        }
     });
 });
 
 // PUT  update an Item - UPDATE
 router.put('/:id', function(req, res) {
-    Todo.findById(req.params.id, function(err, todo) {
+    Todo.find({id: req.params.id}, function(err, todo) {
         if (!todo)
             res.status(404).send("data is not found");
         else
@@ -54,8 +59,9 @@ router.post('/', function(req, res) {
         });
 });
 
+// Delete an Item
 router.delete('/:id', function (req, res) {
-    Todo.findOneAndDelete(req.params.id,  err => {
+    Todo.findOneAndDelete({ id: req.params.id},  err => {
         if(err) return res.status(400).send(err);
         return res.json({success: true});
 

@@ -1,61 +1,41 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-const mongoose = require('mongoose');
+const createError = require('http-errors');         // handling 404 errors
+const express = require('express');                 // Express is our Framework!
+const logger = require('morgan');                   // morgan is out Logger (look on the console *_*)
+const mongoose = require('mongoose');               // mongoose is Object Data Modeling (ODM) library for MongoDB
+const cors = require('cors');                       // cors to enable CORS - Cross-Origin Resource Sharing (CORS) -> https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
-var indexRouter = require('./routes/index');
-var todosRouter = require('./routes/todos');
+// this is our MongoDB database ID
+import { DB_ROUTE } from './config/mongodb';
 
-var app = express();
+// Routes
+const todosRouter = require('./routes/todos');
 
-// this is our MongoDB database
-// import { DB_ROUTE } from './config/mongodb';
-const DB_ROUTE = "mongodb+srv://ADMIN:password12345@todos-cgjjo.mongodb.net/test?retryWrites=true";
+// THE app
+const app = express();
+
+
 // DB SETUP AND CONNECTION
 mongoose.connect(DB_ROUTE, {
   useNewUrlParser: true
 })
     .catch((err) => {
       console.log(err);
-      process.exit(1);
     });
-
 const db = mongoose.connection;
 
 db.once('open' ,()=> console.log("MongoDB connection established :)"));
 
 
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
+// APP config
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.use('/', indexRouter);
-app.use('/todos', todosRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+// APP Routes
+app.use('/todos', todosRouter);                     // main Route
+app.all('/*' ,function(req,res){                // Wrong Route
+        res.status(404).send(`Invalid Url - Sorry Lover`);
 });
 
 module.exports = app;

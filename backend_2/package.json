@@ -1,21 +1,29 @@
 {
   "name": "backend-2",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www"
+    "build": "babel src --out-dir dist",
+    "devstart": "nodemon --exec babel-node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "mongoose": "^5.5.5",
+    "mongoose-sequence": "^5.0.1",
     "morgan": "~1.9.1",
+    "path": "^0.12.7",
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
     "nodemon": "^1.19.0"
   }
 }
