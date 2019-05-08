@@ -1,4 +1,4 @@
-# pp-SkSy-19-Bootstrap
+# pp-SkSy-19-MERN TODO App
 
 Just a Basic TODO-App using MERN
 
