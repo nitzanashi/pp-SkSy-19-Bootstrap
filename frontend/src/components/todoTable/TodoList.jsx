@@ -24,7 +24,8 @@ class TodoList extends Component {
     // Pooling for the Information
     componentDidMount() {
         if (!this.state.intervalIsSet) {
-            let interval = setInterval(this.getDataFromDb, 5000);
+            let interval = setInterval(this.getDataFromDb,
+                500);
             this.setState({ intervalIsSet: interval });
         }
     }
@@ -42,33 +43,28 @@ class TodoList extends Component {
         axios.get("http://localhost:3001/todos")
             .then(res => {
                 this.setState({data: res.data});
-                console.log(res.data);
-            }
-            );
+            });
     };
 
-    // DELETE ITEM
-    deleteFromDb = idToDelete => {
-      let objIdToDelete = null;
-      this.state.data.forEach(dat => {
-          if(dat.id === idToDelete) {
-              objIdToDelete = dat._id;
-          }
-      });
 
-      axios.delete(`http://localhost:3001/todos/${objIdToDelete}`);
-    };
 
     handleChange(id) {
-        this.setState(prevState =>{
-            const updateTodos = prevState.todos.map( item => {
+        this.setState(prevState => {
+            const updateTodos = prevState.data.map( item => {
                 if(item.id === id) {
-                    item.finished =! item.finished
+                    item.finished = !item.finished;
                 }
+                axios.put(`http://localhost:3001/todos/${id}`, {finished: item.finished})
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
                 return item;
             });
             return {
-                todos: updateTodos
+                data: updateTodos
             }
         })
     }
