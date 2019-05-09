@@ -28,7 +28,7 @@ cd frontend && npm install
 npm start
 ```
 
-now the app should run on PORT 3000 -> localhost://3000
+now the app should run on PORT 3001 -> localhost://3000
 
 
 ## Authors
