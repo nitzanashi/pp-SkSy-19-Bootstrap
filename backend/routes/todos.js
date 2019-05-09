@@ -47,7 +47,7 @@ router.post('/', function(req, res) {
 
 // Delete an Item - not workjing so good check it!
 router.delete('/:id', function (req, res) {
-    Todo.remove({ id: req.params.id},  err => {
+    Todo.deleteOne({ id: req.params.id},  err => {
         if(err) return res.status(400).send(err);
         return res.json({success: true});
 

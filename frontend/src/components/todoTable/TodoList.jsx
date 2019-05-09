@@ -76,8 +76,8 @@ class TodoList extends Component {
         console.log(data);
         const TodoItems = data.map(
             item =>(
-                <TodoItem id={item.id} task={item.task} percentage={item.percentage} deadline={item.deadline} finished={item.finished} description={item.description} handleChange={this.handleChange}/>
-            )
+               <TodoItem id={item.id} task={item.task} percentage={item.percentage} deadline={item.deadline} finished={item.finished} description={item.description} handleChange={this.handleChange}/>
+    )
         );
 
         return (
