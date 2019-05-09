@@ -1,15 +1,26 @@
 import React, {Component} from 'react';
+import axios from "axios";
 
 class TodoItem extends Component {
 
-    render() {
+
+    constructor(props){
+        super(props);
+        this.deleteFromDb = this.deleteFromDb.bind(this);
+    };
+
+    // DELETE ITEM
+    deleteFromDb = () => {
+        axios.delete(`http://localhost:3001/todos/${this.props.id}`);
+    };
+
+    render(){
 
         const completedStyle ={
             fontStyle: "italic",
             color: "#cdcdcd",
             textDecoration: "line-through"
         };
-
 
         return (
                 <tr style={this.props.finished ? completedStyle : null}>
@@ -32,8 +43,8 @@ class TodoItem extends Component {
                             <label for="checkbox" className="check-space"> Finished
                             </label>
                         </div>
-                        <button className="btn btn-primary btn-space" type="submit" id={this.props.id} task={this.props.task} percentage={this.props.percentage} deadline ={this.props.deadline} >Edit</button>
-                        <button className="btn btn-danger btn-space" type="submit">Delete</button>
+                        <button className="btn btn-primary btn-space" type="submit" >Edit</button>
+                        <button className="btn btn-danger btn-space" onClick={this.deleteFromDb} type="submit">Delete</button>
                     </td>
                 </tr>
 

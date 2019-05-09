@@ -12,7 +12,7 @@ class AddItem extends Component {
                         <form id="contact_form">
                             <div className="form-group">
                                 <label htmlFor="taskName">Task Name</label>
-                                <input type="text" id="taskName" className="form-control" placeholder="Task Name"/>
+                                <input type="text" id="task" className="form-control" placeholder="Task Name"/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="taskName">Task Description</label>
