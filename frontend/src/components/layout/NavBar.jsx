@@ -23,9 +23,6 @@ class NavBar extends Component {
                                 <NavLink to={'/addItem'} className="nav-link" activeClassName="active">Add TODO Item</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to={'/editItem'} className="nav-link" activeClassName="active">Edit TODO</NavLink>
-                            </li>
-                            <li className="nav-item">
                                 <NavLink to={'/about'} className="nav-link" activeClassName="active">About & Contact</NavLink>
                             </li>
                         </ul>
