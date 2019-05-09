@@ -1,4 +1,3 @@
-const createError = require('http-errors');         // handling 404 errors
 const express = require('express');                 // Express is our Framework!
 const logger = require('morgan');                   // morgan is out Logger (look on the console *_*)
 const mongoose = require('mongoose');               // mongoose is Object Data Modeling (ODM) library for MongoDB

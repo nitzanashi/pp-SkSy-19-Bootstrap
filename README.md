@@ -17,7 +17,7 @@ cd backend && npm install
 
 run the backend server using
 ```
-npm run devstart
+npm run start
 ```
 
 in a new terminal window install & run the Frontend App
