@@ -59,13 +59,23 @@ router.post('/', function(req, res) {
         });
 });
 
-// Delete an Item
+// Delete an Item - not workjing so good check it!
 router.delete('/:id', function (req, res) {
-    Todo.findOneAndDelete({ id: req.params.id},  err => {
+    Todo.remove({ id: req.params.id},  err => {
         if(err) return res.status(400).send(err);
         return res.json({success: true});
 
     });
 });
 
+
+// Delete All Items -- Watch out!!
+router.delete('/', function(req, res){
+   Todo.remove({}, err => {
+       if(err)
+           return res.status(400).send(err);
+       else
+           return res.json({success: true});
+   })
+});
 module.exports = router;
