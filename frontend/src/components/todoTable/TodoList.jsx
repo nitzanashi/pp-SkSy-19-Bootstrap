@@ -25,7 +25,7 @@ class TodoList extends Component {
     componentDidMount() {
         if (!this.state.intervalIsSet) {
             let interval = setInterval(this.getDataFromDb,
-                500);
+                1000);
             this.setState({ intervalIsSet: interval });
         }
     }
@@ -73,10 +73,10 @@ class TodoList extends Component {
     render() {
 
         const { data } = this.state;
-        console.log(data);
+        // console.log(data);
         const TodoItems = data.map(
             item =>(
-               <TodoItem id={item.id} task={item.task} percentage={item.percentage} deadline={item.deadline} finished={item.finished} description={item.description} handleChange={this.handleChange}/>
+               <TodoItem key={item.id} id={item.id} task={item.task} percentage={item.percentage} deadline={item.deadline} finished={item.finished} description={item.description} handleChange={this.handleChange}/>
     )
         );
 
