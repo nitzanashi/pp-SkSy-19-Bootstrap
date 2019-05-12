@@ -1,6 +1,27 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class AddItem extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {};
+    }
+
+    // on change edit state
+    onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+
+    postItem = () => {
+        axios.post("http://localhost:3001/todos/", this.state)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
+
     render() {
         return (
             <div className="container">
@@ -12,23 +33,19 @@ class AddItem extends Component {
                         <form id="contact_form">
                             <div className="form-group">
                                 <label htmlFor="taskName">Task Name</label>
-                                <input type="text" id="task" className="form-control" placeholder="Task Name"/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="taskName">Task Description</label>
-                                <input type="text" id="taskDescription" className="form-control" placeholder="Task Description"/>
+                                <input type="text" id="task" name={"task"} className="form-control" placeholder="Task Name" onChange={this.onChange}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="taskProgress">Progress</label>
-                                <input type="number" id="taskProgress" className="form-control"
-                                       placeholder="Task Progress" min="0" max="100"/>
+                                <input type="number" name={"percentage"} id="percentage" className="form-control"
+                                       placeholder="Task Progress" min="0" max="100" onChange={this.onChange}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="taskDeadline">Deadline</label>
-                                <input type="datetime-local" id="taskDeadline" className="form-control" placeholder="Task Deadline" />
+                                <input type="datetime-local" name={"deadline"} id="taskDeadline" className="form-control" placeholder="Task Deadline" onChange={this.onChange}/>
                             </div>
 
-                            <input type="submit" value="Submit" className="btn btn-primary"/>
+                            <input type="submit" value="Submit" className="btn btn-primary" onClick={this.postItem}/>
                         </form>
                     </div>
                 </div>
