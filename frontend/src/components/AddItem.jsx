@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import axios from 'axios';
+import {Link} from "react-router-dom";
 
 class AddItem extends Component {
 
@@ -20,6 +22,13 @@ class AddItem extends Component {
         })
             .catch(function (error) {
                 console.log(error);
+            });
+    };
+
+    getDataFromDb = (id) => {
+        axios.get(`http://localhost:3001/todos/${id}`)
+            .then(res => {
+                this.setState( res.data[0]);
             });
     };
 
