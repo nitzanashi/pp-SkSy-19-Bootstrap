@@ -1,11 +1,41 @@
 import React, {Component} from 'react';
-import data from '../data'
+import axios from 'axios';
+import {Link} from "react-router-dom";
 
 class EditItem extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {};
+    }
+
+    componentDidMount() {
+        this.getDataFromDb(this.props.match.params.id)
+    }
+
+    onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+
+    // POST TO SERVER
+    putData = () => {
+        axios.put(`http://localhost:3001/todos/${this.state.id}`, this.state)
+            .then(function (response) {
+            console.log(response);
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
+
+    // GET DATA
+    getDataFromDb = (id) => {
+        axios.get(`http://localhost:3001/todos/${id}`)
+            .then(res => {
+                this.setState( res.data[0]);
+            });
+    };
+
     render() {
-        const demoData = data[1];
-        console.log(demoData);
         return (
             <div className="container">
                 <div>
@@ -16,26 +46,27 @@ class EditItem extends Component {
                         <form id="contact_form">
                             <div className="form-group">
                                 <label htmlFor="disabledInput" className="control-label">#</label>
-                                <input className="form-control" id="disabledInput" type="text" value={demoData.id} disabled/>
+                                <input className="form-control" id="disabledInput" type="text" value={this.props.match.params.id} disabled/>
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="taskName">Task Name</label>
-                                <input type="text" id="taskName" className="form-control"
-                                       value={demoData.task}/>
+                                <input type="text" name={"task"} id="taskName" className="form-control"  Value={this.state.task} onChange={this.onChange}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="taskProgress">Progress</label>
-                                <input type="number" id="taskProgress" className="form-control" value={demoData.percentage} min="0"
+                                <input type="number" name={"percentage"} id="taskProgress" className="form-control" value={this.state.percentage} onChange={this.onChange}
+                                       min="0"
                                        max="100"/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="taskDeadline">Deadline</label>
-                                <input type="datetime-local" id="taskDeadline" className="form-control"
-                                       value={demoData.deadline}/>
+                                <input type="datetime-local" name={"deadline"} id="taskDeadline" className="form-control" value={this.state.deadline} onChange={this.onChange}
+                                />
                             </div>
-
-                            <input type="submit" value="Submit" className="btn btn-primary"/>
+                            <Link to={`../`} params={this.props}>
+                                <input type="submit" value="Submit"  onClick={this.putData} className="btn btn-primary"/>
+                            </Link>
                         </form>
                     </div>
                 </div>

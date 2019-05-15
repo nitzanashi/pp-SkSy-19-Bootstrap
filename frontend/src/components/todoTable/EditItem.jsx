@@ -51,9 +51,9 @@ class TodoItem extends Component {
                     <td>
                         <div className="justify-content-center">
                             <input id="checkbox" className="" type="checkbox" onChange={() => this.props.handleChange(this.props.id)} checked={this.props.finished}/>
-                            <label htmlFor="checkbox" className="check-space"> Finished</label>
+                            <label for="checkbox" className="check-space"> Finished</label>
                         </div>
-                        <Link to={`../editItem/${this.props.id}`} params={this.props}>
+                        <Link to="/editItem" params={this.props}>
                             <button className="btn btn-primary btn-space" type="submit" >Edit</button>
                         </Link>
                         <button className="btn btn-danger btn-space" onClick={this.deleteFromDb} type="submit">Delete</button>

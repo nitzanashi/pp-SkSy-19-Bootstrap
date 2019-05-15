@@ -11,7 +11,7 @@ class Dashboard extends Component {
                 <Switch>
                     <Route exact path="/" component={TodoList} />
                     <Route exact path="/addItem" component={AddItem}/>
-                    <Route exact path="/editItem" component={EditItem}/>
+                    <Route path="/editItem/:id" component={EditItem}/>
                     <Route exact path="/about" component={About}/>
                 </Switch>
         );

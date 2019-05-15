@@ -18,7 +18,7 @@ const TodoSchema = new Schema({
     },
     deadline: {
         type: Date,
-        default: Date.now
+        default: new Date().toDateString()
     },
     finished: {
         type: Boolean,

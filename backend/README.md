@@ -18,11 +18,11 @@ npm run devstart
 ```
 
 ## CRUD API ##
-| HTTP METHOD | POST             | GET       | PUT         | DELETE |
-| ----------- | ---------------- | --------- | ----------- | ------ |
-| CRUD OP     | CREATE           | READ      | UPDATE      | DELETE |
-| /todos      | Create new todo  | List todo | Error       | Error  |
-| /todos/86   | Error            | Show Bo   | If exists, update Bo; If not, error | Delete Bo |
+| HTTP METHOD | POST             | GET       | PUT         | DELETE      |
+| ----------- | ---------------- | --------- | ----------- | ----------- |
+| CRUD OP     | CREATE           | READ      | UPDATE      | DELETE      |
+| /todos      | Create new todo  | List todo | Error       | DELETE ALL  |
+| /todos/86   | Error            | GET 86    | If exists, update 86; If not, error | Delete 86 |
 
 
 ## Folder Structure
@@ -46,4 +46,3 @@ npm run devstart
 * [Cors](https://www.npmjs.com/package/cors) - Cross-Origin Resource Sharing Middleware
 * [Nodemon](https://www.npmjs.com/package/nodemon) - Automatically restarting the application when file changes/create in the directory.
 
-just a change

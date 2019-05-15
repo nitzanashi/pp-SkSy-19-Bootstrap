@@ -22,50 +22,46 @@ router.get('/:id',function(req, res) {
         if(err || isEmpty(todo)) {
             res.status(404).send("data is not found");
         }
-        else{
-            res.json(todo);
-        }
+        res.json(todo);
     });
 });
 
 // PUT  update an Item - UPDATE
 router.put('/:id', function(req, res) {
-    Todo.find({id: req.params.id}, function(err, todo) {
-        if (!todo)
-            res.status(404).send("data is not found");
-        else
-            todo.todo_description = req.body.todo_description;
-        todo.todo_responsible = req.body.todo_responsible;
-        todo.todo_priority = req.body.todo_priority;
-        todo.todo_completed = req.body.todo_completed;
-        todo.save().then(todo => {
-            res.json(todo);
-        })
-            .catch(err => {
-                res.status(400).send(`Update not possible, ${err}`);
-            });
+    Todo.findOneAndUpdate({id: req.params.id}, req.body, {new: true}, (err, todo) => {
+        if (err) {
+            res.status(404).send("Something wrong when updating data!");
+        }
+        res.json(todo);
     });
 });
 
 // POST - add a new Item - CREATE
 router.post('/', function(req, res) {
     let todo = new Todo(req.body);
-    todo.save()
-        .then(todo => {
-            res.status(200).json(todo);
-        })
-        .catch(err => {
-            res.status(400).send(`adding new todo failed, ${err}`);
-        });
+    todo.save(err => {
+        if (err) return res.status(500).send(err);
+        return res.status(200).send(todo);
+    });
 });
 
-// Delete an Item
+// Delete an Item - not workjing so good check it!
 router.delete('/:id', function (req, res) {
-    Todo.findOneAndDelete({ id: req.params.id},  err => {
+    Todo.deleteOne({ id: req.params.id},  err => {
         if(err) return res.status(400).send(err);
         return res.json({success: true});
 
     });
 });
 
+
+// Delete All Items -- Watch out!!
+router.delete('/', function(req, res){
+   Todo.remove({}, err => {
+       if(err)
+           return res.status(400).send(err);
+       else
+           return res.json({success: true});
+   })
+});
 module.exports = router;
